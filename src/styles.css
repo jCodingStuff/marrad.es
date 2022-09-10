@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+/* FONTS */
+@font-face {
+    font-family: "CMSerif";
+    src: local("CMSerif"), url(./assets/fonts/cmunrm.ttf) format("truetype");
+}
+@font-face {
+    font-family: "CMSansSerif";
+    src: local("CMSansSerif"), url(./assets/fonts/cmunss.ttf) format("truetype");
+}
+
+body {
+    background-color: #baccd4;
+}
+
+.cm-serif {
+    font-family: 'CMSerif';
+}
+
+.cm-sans-serif {
+    font-family: 'CMSansSerif';
+}
+
+/* For screen-reader only! */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
+  }
