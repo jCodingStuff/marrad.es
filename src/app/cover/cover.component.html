@@ -6,14 +6,22 @@
     id="my-picture">
 
 <!-- Catchphrase  -->
-<div class="cm-serif">{{catchphrase_text}}</div>
+<div class="cm-serif">
+    {{catchphrase[language]}}
+</div>
 
 <!-- Learn more -->
-<button>
-    Learn more
+<button class="cm-sans-serif">
+    {{learnMore[language]}}
 </button>
 
 <!-- I work with -->
 <div>
-    <div class="cm-sans-serif">I work with</div>
+    <div class="cm-sans-serif">
+        {{workWith[language]}}
+    </div>
+    <div *ngFor="let collaborator of collaborators">
+        <img src="{{collaborator.picturePath}}" alt="{{collaborator.name}} logo">
+        <div class="cm-sans-serif">{{collaborator.name}}</div>
+    </div>
 </div>

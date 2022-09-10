@@ -1,11 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { SUPPORTED_LANGS } from '../data';
 
-const CATCHPHRASE_TEXTS: {[key: string]: string} = {
-  'eng': '(Hopefully) changing the world one project at a time',
-  'esp': 'Cambiando el mundo proyecto a proyecto',
-  'cat': 'Canviant el mon projecte a projecte',
+interface Collaborator {
+  name: string;
+  picturePath: string;
 }
 
 @Component({
@@ -15,26 +13,34 @@ const CATCHPHRASE_TEXTS: {[key: string]: string} = {
 })
 export class CoverComponent implements OnInit {
 
-  @Input()
-  get language(): string { return this._language; }
-  set language(lang: string) {
-    this._language = lang;
-    this.setTexts();
-  }
-  private _language!: string;
-  catchphrase_text!: string;
+  // Texts
+  catchphrase: {[key: string]: string} = {
+    'eng': '(Hopefully) changing the world one project at a time',
+    'esp': 'Cambiando el mundo proyecto a proyecto',
+    'cat': 'Canviant el mon projecte a projecte',
+  };
+  learnMore: {[key: string]: string} = {
+    'eng': 'Learn more',
+    'esp': 'Saber más',
+    'cat': 'Saber més',
+  };
+  workWith: {[key: string]: string} = {
+    'eng': 'I work with',
+    'esp': 'Trabajo con',
+    'cat': 'Treballe amb',
+  };
+
+  // Collaborators
+  collaborators: Collaborator[] = [
+    { name: 'Uppsala University', picturePath: 'assets/images/uu-logo.svg' },
+    { name: 'Dédalo', picturePath: 'assets/images/dedalo-logo.svg' },
+  ];
+
+  @Input() language!: string;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.setTexts();
-  }
-
-  /**
-   * Set texts in the component according to the language
-   */
-  private setTexts(): void {
-    this.catchphrase_text = CATCHPHRASE_TEXTS[this._language];
   }
 
 }
