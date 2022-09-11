@@ -29,3 +29,28 @@
     cursor: pointer;
     opacity: 0.7;
 }
+
+#languages {
+    display: flex;
+    flex-direction: row;
+}
+
+#socials {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 7px;
+}
+
+.social-icon {
+    color: black;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    opacity: 0.7;
+    transition-duration: 250ms;
+}
+
+.social-icon:hover, .social-icon:focus {
+    opacity: 1;
+}

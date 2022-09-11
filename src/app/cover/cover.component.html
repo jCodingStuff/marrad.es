@@ -1,6 +1,6 @@
-<div id="main-content" class="outlined-blue wrapper content-middle">
+<div id="main-content" class="wrapper content-middle">
     <!-- Name -->
-    <div id="my-name" class="cm-serif outlined-red">
+    <div id="my-name" class="cm-serif">
         Julián Marrades
     </div>
 
@@ -9,7 +9,7 @@
         id="my-picture">
 
     <!-- Catchphrase  -->
-    <div id="catchphrase" class="cm-serif outlined-red">
+    <div id="catchphrase" class="cm-serif">
         {{catchphrase[language]}}
     </div>
 
@@ -22,16 +22,18 @@
 
 <!-- I work with -->
 <div id="iww-section" class="wrapper content-middle">
-    <div id="iww-text" class="cm-sans-serif outlined-blue">
-        {{workWith[language] | uppercase}}
+    <div id="iww-text" class="cm-sans-serif">
+        {{workWith[language]}}
     </div>
-    <div id="collaborators" class="outlined-green wrapper">
-        <div *ngFor="let collaborator of collaborators" class="collaborator outlined-green">
-            <a class="plain-text" href="{{collaborator.url}}" target="_blank" rel="noopener noreferrer">
-                <img class="outlined-blue collaborator-logo"
+    <div id="collaborators" class="wrapper">
+        <a *ngFor="let collaborator of collaborators"
+            class="plain-text" href="{{collaborator.url}}"
+            target="_blank" rel="noopener noreferrer">
+            <div class="collaborator">
+                <img class="collaborator-logo"
                     src="{{collaborator.picturePath}}" alt="{{collaborator.name[language]}} logo">
-                <div class="cm-sans-serif collaborator-name outlined-red">{{collaborator.name[language]}}</div>
-            </a>
-        </div>
+                <div class="cm-sans-serif collaborator-name">{{collaborator.name[language]}}</div>
+            </div>
+        </a>
     </div>
 </div>
