@@ -1,5 +1,19 @@
-<!-- Languages -->
-<div class="outlined-green wrapper">
+<!-- Socials and languages -->
+<div id="top-bar" class="outlined-green wrapper">
+  <div id="socials" class="outlined-blue">
+    <a href="tel:+34644472327">
+      <fa-icon [icon]="faPhone"></fa-icon>
+    </a>
+    <a href="mailto:julian@marrad.es">
+      <fa-icon [icon]="faEnvelope"></fa-icon>
+    </a>
+    <a href="https://www.linkedin.com/in/julian-marrades/">
+      <fa-icon [icon]="faLinkedin"></fa-icon>
+    </a>
+    <a href="https://github.com/jCodingStuff">
+      <fa-icon [icon]="faGithub"></fa-icon>
+    </a>
+  </div>
   <div id="languages" class="outlined-red">
     <button type="button" *ngFor="let lang of languages"
       class="lang-button {{lang !== selectedLang ? 'enabled-lang-button' : '' }}"

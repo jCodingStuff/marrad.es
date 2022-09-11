@@ -1,3 +1,9 @@
+#top-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .lang-flag {
     min-width: 30px;
     max-width: 2vw;
@@ -22,8 +28,4 @@
 .enabled-lang-button {
     cursor: pointer;
     opacity: 0.7;
-}
-
-#languages {
-    float: right;
 }

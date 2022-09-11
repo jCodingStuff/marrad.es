@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 
+import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
 import { SUPPORTED_LANGS } from './data';
 
 @Component({
@@ -9,6 +13,12 @@ import { SUPPORTED_LANGS } from './data';
 })
 export class AppComponent {
   
+  // Icons
+  faPhone = faPhone;
+  faEnvelope = faEnvelope;
+  faLinkedin = faLinkedin;
+  faGithub = faGithub;
+
   selectedLang: string = 'eng';
   languages: string[] = SUPPORTED_LANGS;
 
