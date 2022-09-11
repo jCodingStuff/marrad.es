@@ -1,15 +1,17 @@
 <!-- Languages -->
-<div id="languages">
-  <button type="button" *ngFor="let lang of languages"
-    class="lang-button {{lang !== selectedLang ? 'enabled-lang-button' : '' }}"
-    [disabled]="lang === selectedLang"
-    (click)="setLanguage(lang)">
-    
-    <img src="assets/images/flag-{{lang}}.svg"
-      alt="Language: {{lang | uppercase}}"
-      class="lang-flag">
-
-  </button>
+<div class="outlined-green wrapper">
+  <div id="languages" class="outlined-red">
+    <button type="button" *ngFor="let lang of languages"
+      class="lang-button {{lang !== selectedLang ? 'enabled-lang-button' : '' }}"
+      [disabled]="lang === selectedLang"
+      (click)="setLanguage(lang)">
+      
+      <img src="assets/images/flag-{{lang}}.svg"
+        alt="Language: {{lang | uppercase}}"
+        class="lang-flag">
+  
+    </button>
+  </div>
 </div>
 
 <!-- Child component -->

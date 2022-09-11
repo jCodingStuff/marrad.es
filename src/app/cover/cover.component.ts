@@ -2,8 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 
 
 interface Collaborator {
-  name: string;
+  name: {[key: string]: string};
   picturePath: string;
+  url: string;
 }
 
 @Component({
@@ -24,6 +25,11 @@ export class CoverComponent implements OnInit {
     'esp': 'Saber más',
     'cat': 'Saber més',
   };
+  comingSoon: {[key: string]: string} = {
+    'eng': 'Coming soon...',
+    'esp': 'Próximamente...',
+    'cat': 'Pròximament...',
+  };
   workWith: {[key: string]: string} = {
     'eng': 'I work with',
     'esp': 'Trabajo con',
@@ -32,8 +38,24 @@ export class CoverComponent implements OnInit {
 
   // Collaborators
   collaborators: Collaborator[] = [
-    { name: 'Uppsala University', picturePath: 'assets/images/uu-logo.svg' },
-    { name: 'Dédalo', picturePath: 'assets/images/dedalo-logo.svg' },
+    {
+      name: {
+        'eng': 'Uppsala University',
+        'esp': 'Universidad de Uppsala',
+        'cat': "Universitat d'Uppsala"
+      },
+      picturePath: 'assets/images/uu-logo.svg',
+      url: 'https://www.uu.se/en'
+    },
+    {
+      name: {
+        'eng': 'Dédalo',
+        'esp': 'Dédalo',
+        'cat': "Dédalo"
+      },
+      picturePath: 'assets/images/dedalo-logo.svg',
+      url: 'https://dedalo.dev'
+    },
   ];
 
   @Input() language!: string;
@@ -41,6 +63,12 @@ export class CoverComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  swapLMandCS() {
+    let temp: {[key: string]: string} = this.comingSoon;
+    this.comingSoon = this.learnMore;
+    this.learnMore = temp;
   }
 
 }

@@ -1,3 +1,8 @@
+/* Root stuff */
+:root {
+    --body-margin: 10px;
+}
+
 /* FONTS */
 @font-face {
     font-family: "CMSerif";
@@ -7,9 +12,14 @@
     font-family: "CMSansSerif";
     src: local("CMSansSerif"), url(./assets/fonts/cmunss.ttf) format("truetype");
 }
+@font-face {
+    font-family: "CMSSBold";
+    src: local("CMSSBold"), url(./assets/fonts/cmunbsr.ttf) format("truetype");
+}
 
 body {
-    background-color: #baccd4;
+    background-color: #ebebeb;
+    margin: var(--body-margin);
 }
 
 .cm-serif {
@@ -18,6 +28,35 @@ body {
 
 .cm-sans-serif {
     font-family: 'CMSansSerif';
+}
+
+.cm-ss-bold {
+    font-family: 'CMSSBold';
+}
+
+.outlined-red {
+    border: 1px solid red;
+}
+
+.outlined-green {
+    border: 1px solid green;
+}
+
+.outlined-blue {
+    border: 1px solid blue;
+}
+
+.wrapper {
+    overflow: auto;
+}
+
+.content-middle {
+    text-align: center;
+}
+
+.plain-text {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* For screen-reader only! */

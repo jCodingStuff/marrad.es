@@ -1,27 +1,37 @@
-<!-- Name -->
-<div class="cm-serif">Julián Marrades</div>
+<div id="main-content" class="outlined-blue wrapper content-middle">
+    <!-- Name -->
+    <div id="my-name" class="cm-serif outlined-red">
+        Julián Marrades
+    </div>
 
-<!-- My picture -->
-<img src="assets/images/my-face.jpeg" alt="A picture of me"
-    id="my-picture">
+    <!-- My picture -->
+    <img src="assets/images/my-face.jpeg" alt="A picture of me"
+        id="my-picture">
 
-<!-- Catchphrase  -->
-<div class="cm-serif">
-    {{catchphrase[language]}}
+    <!-- Catchphrase  -->
+    <div id="catchphrase" class="cm-serif outlined-red">
+        {{catchphrase[language]}}
+    </div>
+
+    <!-- Learn more -->
+    <button id="btn-learn" class="cm-ss-bold" disabled
+        (mouseenter)="swapLMandCS()" (mouseleave)="swapLMandCS()">
+        {{learnMore[language] | uppercase}}
+    </button>
 </div>
 
-<!-- Learn more -->
-<button class="cm-sans-serif">
-    {{learnMore[language]}}
-</button>
-
 <!-- I work with -->
-<div>
-    <div class="cm-sans-serif">
-        {{workWith[language]}}
+<div id="iww-section" class="wrapper content-middle">
+    <div id="iww-text" class="cm-sans-serif outlined-blue">
+        {{workWith[language] | uppercase}}
     </div>
-    <div *ngFor="let collaborator of collaborators">
-        <img src="{{collaborator.picturePath}}" alt="{{collaborator.name}} logo">
-        <div class="cm-sans-serif">{{collaborator.name}}</div>
+    <div id="collaborators" class="outlined-green wrapper">
+        <div *ngFor="let collaborator of collaborators" class="collaborator outlined-green">
+            <a class="plain-text" href="{{collaborator.url}}" target="_blank" rel="noopener noreferrer">
+                <img class="outlined-blue collaborator-logo"
+                    src="{{collaborator.picturePath}}" alt="{{collaborator.name[language]}} logo">
+                <div class="cm-sans-serif collaborator-name outlined-red">{{collaborator.name[language]}}</div>
+            </a>
+        </div>
     </div>
 </div>
