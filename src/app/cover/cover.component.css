@@ -53,7 +53,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: end;
+    align-items: flex-end;
     gap: 5vw;
 }
 
