@@ -21,10 +21,10 @@
     </a>
   </div>
   <div id="languages">
-    <button type="button" *ngFor="let lang of languages"
-      class="lang-button {{lang !== selectedLang ? 'enabled-lang-button' : '' }}"
-      [disabled]="lang === selectedLang"
-      (click)="setLanguage(lang)">
+    <button type="button" *ngFor="let lang of langService.supportedLangs"
+      class="lang-button {{lang !== langService.language ? 'enabled-lang-button' : '' }}"
+      [disabled]="lang === langService.language"
+      (click)="langService.language = lang">
       
       <img src="assets/images/flag-{{lang}}.svg"
         alt="Language: {{lang | uppercase}}"
@@ -34,5 +34,5 @@
   </div>
 </div>
 
-<!-- Child component -->
-<app-cover [language]="selectedLang"></app-cover>
+<!-- Routing component -->
+<router-outlet></router-outlet>

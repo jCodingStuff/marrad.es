@@ -9,6 +9,10 @@
     src: local("CMSerif"), url(./assets/fonts/cmunrm.ttf) format("truetype");
 }
 @font-face {
+    font-family: "CMSBold";
+    src: local("CMSBold"), url(./assets/fonts/cmunbx.ttf) format("truetype");
+}
+@font-face {
     font-family: "CMSansSerif";
     src: local("CMSansSerif"), url(./assets/fonts/cmunss.ttf) format("truetype");
 }
@@ -24,6 +28,10 @@ body {
 
 .cm-serif {
     font-family: 'CMSerif';
+}
+
+.cm-s-bold {
+    font-family: 'CMSBold';
 }
 
 .cm-sans-serif {

@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { LanguageService } from '../language.service';
 
 
 interface Collaborator {
@@ -13,7 +14,7 @@ interface Collaborator {
   styleUrls: ['./cover.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class CoverComponent implements OnInit {
+export class CoverComponent {
 
   // Texts
   catchphrase: {[key: string]: string} = {
@@ -59,12 +60,7 @@ export class CoverComponent implements OnInit {
     },
   ];
 
-  @Input() language!: string;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  constructor(public langService: LanguageService) { }
 
   swapLMandCS() {
     let temp: {[key: string]: string} = this.comingSoon;
