@@ -38,7 +38,7 @@
 #socials {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
     gap: 7px;
 }
 
@@ -47,7 +47,7 @@
     border: none;
     outline: none;
     cursor: pointer;
-    opacity: 0.7;
+    opacity: 0.6;
     transition-duration: 250ms;
 }
 

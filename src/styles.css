@@ -20,8 +20,6 @@
 body {
     background-color: #ebebeb;
     margin: var(--body-margin);
-    height: 100%;
-    overflow: hidden;
 }
 
 .cm-serif {

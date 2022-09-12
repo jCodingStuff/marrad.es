@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 
 interface Collaborator {
@@ -10,7 +10,8 @@ interface Collaborator {
 @Component({
   selector: 'app-cover',
   templateUrl: './cover.component.html',
-  styleUrls: ['./cover.component.css']
+  styleUrls: ['./cover.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CoverComponent implements OnInit {
 
