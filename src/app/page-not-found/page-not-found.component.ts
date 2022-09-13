@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 
-import { LanguageService } from '../language.service';
+import { LanguageComponent } from '../language/language.component';
+
 
 @Component({
   selector: 'app-page-not-found',
@@ -9,7 +10,7 @@ import { LanguageService } from '../language.service';
   styleUrls: ['./page-not-found.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class PageNotFoundComponent {
+export class PageNotFoundComponent extends LanguageComponent {
 
   header: {[key: string]: string} = {
     'eng': '404 Error',
@@ -22,7 +23,5 @@ export class PageNotFoundComponent {
     'esp': 'Página no encontrada',
     'cat': 'Pàgina no trobada',
   }
-
-  constructor (public langService: LanguageService) {}
 
 }

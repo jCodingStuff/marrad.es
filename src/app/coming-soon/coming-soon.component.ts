@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 
-import { LanguageService } from '../language.service';
+import { LanguageComponent } from '../language/language.component';
 
 @Component({
   selector: 'app-coming-soon',
@@ -9,14 +9,12 @@ import { LanguageService } from '../language.service';
   styleUrls: ['./coming-soon.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class ComingSoonComponent {
+export class ComingSoonComponent extends LanguageComponent {
 
   csText: {[key: string]: string} = {
     'eng': 'Coming soon...',
     'esp': 'Próximamente...',
     'cat': 'Pròximament...'
   }
-
-  constructor(public langService: LanguageService) { }
 
 }

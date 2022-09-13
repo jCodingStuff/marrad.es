@@ -10,7 +10,7 @@
 
     <!-- Catchphrase  -->
     <div id="catchphrase" class="cm-serif">
-        {{catchphrase[langService.language]}}
+        {{catchphrase[getLanguage()]}}
     </div>
 
     <!-- Learn more -->
@@ -18,7 +18,7 @@
         (mouseenter)="swapLMandCS()" (mouseleave)="swapLMandCS()"
         routerLink="/coming-soon">
         
-        {{learnMore[langService.language] | uppercase}}
+        {{learnMore[getLanguage()] | uppercase}}
     
     </button>
 </div>
@@ -26,7 +26,7 @@
 <!-- I work with -->
 <div id="iww-section" class="wrapper content-middle">
     <div id="iww-text" class="cm-sans-serif">
-        {{workWith[langService.language]}}
+        {{workWith[getLanguage()]}}
     </div>
     <div id="collaborators" class="wrapper">
         <a *ngFor="let collaborator of collaborators"
@@ -34,8 +34,8 @@
             target="_blank" rel="noopener noreferrer">
             <div class="collaborator">
                 <img class="collaborator-logo"
-                    src="{{collaborator.picturePath}}" alt="{{collaborator.name[langService.language]}} logo">
-                <div class="cm-sans-serif collaborator-name">{{collaborator.name[langService.language]}}</div>
+                    src="{{collaborator.picturePath}}" alt="{{collaborator.name[getLanguage()]}} logo">
+                <div class="cm-sans-serif collaborator-name">{{collaborator.name[getLanguage()]}}</div>
             </div>
         </a>
     </div>

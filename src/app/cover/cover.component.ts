@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { LanguageService } from '../language.service';
+import { LanguageComponent } from '../language/language.component';
 
 
 interface Collaborator {
@@ -14,7 +14,7 @@ interface Collaborator {
   styleUrls: ['./cover.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class CoverComponent {
+export class CoverComponent extends LanguageComponent {
 
   // Texts
   catchphrase: {[key: string]: string} = {
@@ -59,8 +59,6 @@ export class CoverComponent {
       url: 'https://dedalo.dev'
     },
   ];
-
-  constructor(public langService: LanguageService) { }
 
   swapLMandCS() {
     let temp: {[key: string]: string} = this.comingSoon;
