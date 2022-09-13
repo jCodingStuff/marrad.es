@@ -19,12 +19,17 @@
       <fa-icon class="social-icon" [icon]="faGithub"
       size="xl"></fa-icon>
     </a>
+    <a href="https://www.youtube.com/channel/UC7jYmc2qaAy8X4u1BxrQkfg" target="_blank"
+      class="social-link">
+      <fa-icon class="social-icon" [icon]="faYoutube"
+      size="xl"></fa-icon>
+    </a>
   </div>
   <div id="languages">
-    <button type="button" *ngFor="let lang of langService.supportedLangs"
-      class="lang-button {{lang !== langService.language ? 'enabled-lang-button' : '' }}"
-      [disabled]="lang === langService.language"
-      (click)="langService.language = lang">
+    <button type="button" *ngFor="let lang of getSupportedLanguages()"
+      class="lang-button {{lang !== getLanguage() ? 'enabled-lang-button' : '' }}"
+      [disabled]="lang === getLanguage()"
+      (click)="setLanguage(lang)">
       
       <img src="assets/images/flag-{{lang}}.svg"
         alt="Language: {{lang | uppercase}}"
