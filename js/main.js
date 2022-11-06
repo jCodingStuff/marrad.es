@@ -96,7 +96,7 @@ function renderTimeline() {
         }
     }
     // Render blobs
-    renderTimelineBlob(
+    renderTimelineBlob(  // UM
         svg,
         yMargin,
         xCenter,
@@ -109,7 +109,7 @@ function renderTimeline() {
         0.5, 
         'https://www.maastrichtuniversity.nl/'
     );
-    renderTimelineBlob(
+    renderTimelineBlob(  // UU
         svg,
         yMargin,
         xCenter,
@@ -119,10 +119,10 @@ function renderTimeline() {
         'left',
         2020.75,
         'assets/svg/uu_logo.svg',
-        0.7,
+        0.75,
         'https://www.uu.se/en'
     );
-    renderTimelineBlob(
+    renderTimelineBlob(  // APG
         svg,
         yMargin,
         xCenter,
@@ -135,7 +135,7 @@ function renderTimeline() {
         0.67,
         'https://apg.nl/en/'
     );
-    renderTimelineBlob(
+    renderTimelineBlob(  // Dedalo
         svg,
         yMargin,
         xCenter,
@@ -148,7 +148,20 @@ function renderTimeline() {
         0.65,
         'https://dedalo.dev/'
     );
-    renderTimelineBlob(
+    renderTimelineBlob(  // MIB
+        svg,
+        yMargin,
+        xCenter,
+        startYear,
+        heightPerYear,
+        axisLineStrokeWidth,
+        'left',
+        2022.75,
+        'assets/png/mib_coin.png',
+        0.75,
+        'https://monedaiberica.org/?lang=lg-eng'
+    );
+    renderTimelineBlob(  // EdLab
         svg,
         yMargin,
         xCenter,
@@ -170,7 +183,7 @@ function renderTimeline() {
  * @param {number} xCenter the width center
  * @param {number} startYear the start year of the axis
  * @param {number} heightPerYear height per year
- * @param {number} axisLineStrokeWidth the stroke width of the axis line
+ * @param {number} xOffset the x-offset for the positioning
  * @param {'left' | 'right'} direction the direction of the blob
  * @param {number} year year of the blob
  * @param {string} imgSrc image source for the blob
@@ -183,7 +196,7 @@ function renderTimelineBlob(
     xCenter,
     startYear,
     heightPerYear,
-    axisLineStrokeWidth,
+    xOffset,
     direction,
     year,
     imgSrc,
@@ -193,8 +206,8 @@ function renderTimelineBlob(
     const distance = 110;
     const diameter = 70;
     const circXCenter = direction === 'right' ?
-        xCenter + axisLineStrokeWidth/2 + distance :
-        xCenter - axisLineStrokeWidth/2 - distance;
+        xCenter + xOffset/2 + distance :
+        xCenter - xOffset/2 - distance;
     const circYCenter = yMargin + (year - startYear) * heightPerYear;
     const blob = svg.group();
     const link = blob.link(url);
