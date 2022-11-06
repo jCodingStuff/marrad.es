@@ -30,7 +30,7 @@ body {
 }
 
 #headline-text-container {
-    margin-left: 10%;
+    margin-inline: 10%;
 }
 
 #headline-salute {
@@ -77,13 +77,16 @@ body {
     .header-column {
         width: 100%;
     }
+    #headline-text-container {
+        text-align: center;
+    }
     #headline-salute {
-        font-size: 10vw;
+        font-size: 10.7vw;
     }
     #headline-subtitle {
-        font-size: 5.4vw;
+        font-size: 6.2vw;
     }
     #headline-contact-button {
-        font-size: 3.5vw;
+        font-size: 4.5vw;
     }
 }
