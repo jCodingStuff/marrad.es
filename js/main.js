@@ -20,11 +20,11 @@ function renderTimeline() {
      * @type {Element}
      */
     const timelineContainer = document.getElementById('timeline-container');
-    const heightPerc = '80%';
+    const heightPerc = '85%';
     // Drawing properties
     const width = 400;
     const xCenter = width/2;
-    const yMargin = 5;
+    const yMargin = 10;
     // Axis line
     const axisLineStrokeWidth = 2;
     const heightPerYear = 100;
@@ -39,7 +39,7 @@ function renderTimeline() {
     // Axis tick labels
     const axisTLSize = 12;
     const axisTLXOffset = 5;
-    const axisTLYOffset = 3.9;  // center vertically manually since 'dominant-baseline' is not implemented for mobile devices
+    const axisTLYOffset = 4.15;  // center vertically manually since 'dominant-baseline' is not implemented for mobile devices
     // Root svg tag
     const svg =
         SVG()
@@ -47,9 +47,11 @@ function renderTimeline() {
         .height(heightPerc)
         .addClass('o-green');
     svg.viewbox(0, 0, width, totalHeight);
+    // Timeline axis
+    const axis = svg.group();
     // Timeline axis line
     const axisLine =
-        svg
+        axis
         .line(xCenter, yMargin, xCenter, totalHeight - yMargin)
     axisLine.stroke({
         width: axisLineStrokeWidth,
@@ -61,7 +63,7 @@ function renderTimeline() {
         // FIXME: floating arithmetic, dangerous!
         const tickWidth = Number.isInteger(year) ? axisMajorTickWidth : axisTickWidth;
         const tmpLine =
-            svg.
+            axis.
             line(
                 xCenter - tickWidth/2, yMargin + yOffset,
                 xCenter + tickWidth/2, yMargin + yOffset
@@ -76,8 +78,8 @@ function renderTimeline() {
             const evenYear = yearRounded % 2 === 0;
             const yearString = String(yearRounded);
             const tmpText =
-                svg
-                .text(yearString)
+                axis
+                .plain(yearString)
                 .attr({
                     'text-anchor': evenYear ? 'end' : 'start',
                     // 'dominant-baseline': 'middle', NOT IMPLEMENTED IN MOBILE DEVICES
@@ -93,4 +95,117 @@ function renderTimeline() {
             tmpText.amove(xPos, yMargin + yOffset + axisTLYOffset);
         }
     }
+    // Render blobs
+    renderTimelineBlob(
+        svg,
+        yMargin,
+        xCenter,
+        startYear,
+        heightPerYear,
+        axisLineStrokeWidth,
+        'right',
+        2017.75,
+        'assets/svg/um_logo.svg',
+        0.5, 
+        'https://www.maastrichtuniversity.nl/'
+    );
+    renderTimelineBlob(
+        svg,
+        yMargin,
+        xCenter,
+        startYear,
+        heightPerYear,
+        axisLineStrokeWidth,
+        'left',
+        2020.75,
+        'assets/svg/uu_logo.svg',
+        0.7,
+        'https://www.uu.se/en'
+    );
+    renderTimelineBlob(
+        svg,
+        yMargin,
+        xCenter,
+        startYear,
+        heightPerYear,
+        axisLineStrokeWidth,
+        'left',
+        2018.5,
+        'assets/svg/apg_logo.svg',
+        0.67,
+        'https://apg.nl/en/'
+    );
+    renderTimelineBlob(
+        svg,
+        yMargin,
+        xCenter,
+        startYear,
+        heightPerYear,
+        axisLineStrokeWidth,
+        'right',
+        2022.75,
+        'assets/svg/dedalo_logo.svg',
+        0.65,
+        'https://dedalo.dev/'
+    );
+    renderTimelineBlob(
+        svg,
+        yMargin,
+        xCenter,
+        startYear,
+        heightPerYear,
+        axisLineStrokeWidth,
+        'right',
+        2018.75,
+        'assets/jpg/edlab_logo.jpg',
+        0.5,
+        'https://edlab.nl/excellence/honoursplus/'
+    );
+}
+
+/**
+ * 
+ * @param svg the SVG.js SVG object 
+ * @param {number} yMargin y margin of the drawing
+ * @param {number} xCenter the width center
+ * @param {number} startYear the start year of the axis
+ * @param {number} heightPerYear height per year
+ * @param {number} axisLineStrokeWidth the stroke width of the axis line
+ * @param {'left' | 'right'} direction the direction of the blob
+ * @param {number} year year of the blob
+ * @param {string} imgSrc image source for the blob
+ * @param {number} diameterMult diameter multiplier for resizing
+ * @param {string} url web link for the blob
+ */
+function renderTimelineBlob(
+    svg,
+    yMargin,
+    xCenter,
+    startYear,
+    heightPerYear,
+    axisLineStrokeWidth,
+    direction,
+    year,
+    imgSrc,
+    diameterMult,
+    url
+) {
+    const distance = 110;
+    const diameter = 70;
+    const circXCenter = direction === 'right' ?
+        xCenter + axisLineStrokeWidth/2 + distance :
+        xCenter - axisLineStrokeWidth/2 - distance;
+    const circYCenter = yMargin + (year - startYear) * heightPerYear;
+    const blob = svg.group();
+    const link = blob.link(url);
+    link.target('_blank');
+    const tmpCircle =
+        link
+        .circle(diameter)
+        .fill('#FFFFFF')
+        .center(circXCenter, circYCenter)
+    const tmpImage = link.image(imgSrc, (event) => {
+        tmpImage.size(diameter*diameterMult);
+        tmpImage.move(circXCenter-tmpImage.width()/2, circYCenter-tmpImage.height()/2);
+    });
 }
