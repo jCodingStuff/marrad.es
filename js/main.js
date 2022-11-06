@@ -103,11 +103,26 @@ function renderTimeline() {
         startYear,
         heightPerYear,
         axisLineStrokeWidth,
+        110,
         'right',
         2017.75,
         'assets/svg/um_logo.svg',
         0.5, 
         'https://www.maastrichtuniversity.nl/'
+    );
+    renderTimelineBlob(  // InterUM
+        svg,
+        yMargin,
+        xCenter,
+        startYear,
+        heightPerYear,
+        axisLineStrokeWidth,
+        110,
+        'left',
+        2017.75,
+        'assets/png/interum_logo.png',
+        0.75, 
+        'https://www.maastrichtuniversity.nl/maastricht-university-ambassadors-team'
     );
     renderTimelineBlob(  // UU
         svg,
@@ -116,6 +131,7 @@ function renderTimeline() {
         startYear,
         heightPerYear,
         axisLineStrokeWidth,
+        110,
         'left',
         2020.75,
         'assets/svg/uu_logo.svg',
@@ -129,8 +145,9 @@ function renderTimeline() {
         startYear,
         heightPerYear,
         axisLineStrokeWidth,
+        110,
         'left',
-        2018.5,
+        2018.6,
         'assets/svg/apg_logo.svg',
         0.67,
         'https://apg.nl/en/'
@@ -142,8 +159,9 @@ function renderTimeline() {
         startYear,
         heightPerYear,
         axisLineStrokeWidth,
+        110,
         'right',
-        2022.75,
+        2022.60,
         'assets/svg/dedalo_logo.svg',
         0.65,
         'https://dedalo.dev/'
@@ -155,6 +173,7 @@ function renderTimeline() {
         startYear,
         heightPerYear,
         axisLineStrokeWidth,
+        110,
         'left',
         2022.75,
         'assets/png/mib_coin.png',
@@ -168,6 +187,7 @@ function renderTimeline() {
         startYear,
         heightPerYear,
         axisLineStrokeWidth,
+        110,
         'right',
         2018.75,
         'assets/jpg/edlab_logo.jpg',
@@ -184,6 +204,7 @@ function renderTimeline() {
  * @param {number} startYear the start year of the axis
  * @param {number} heightPerYear height per year
  * @param {number} xOffset the x-offset for the positioning
+ * @param {number} distance the x-distance of the circle center
  * @param {'left' | 'right'} direction the direction of the blob
  * @param {number} year year of the blob
  * @param {string} imgSrc image source for the blob
@@ -197,17 +218,17 @@ function renderTimelineBlob(
     startYear,
     heightPerYear,
     xOffset,
+    distance,
     direction,
     year,
     imgSrc,
     diameterMult,
     url
 ) {
-    const distance = 110;
     const diameter = 70;
     const circXCenter = direction === 'right' ?
-        xCenter + xOffset/2 + distance :
-        xCenter - xOffset/2 - distance;
+        xCenter + xOffset + distance :
+        xCenter - xOffset - distance;
     const circYCenter = yMargin + (year - startYear) * heightPerYear;
     const blob = svg.group();
     const link = blob.link(url);
