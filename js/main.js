@@ -44,8 +44,8 @@ function renderTimeline() {
     const svg =
         SVG()
         .addTo(timelineContainer)
-        .height(heightPerc)
-        .addClass('o-green');
+        .height(heightPerc);
+        // .addClass('o-green');
     svg.viewbox(0, 0, width, totalHeight);
     // Timeline axis
     const axis = svg.group();

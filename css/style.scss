@@ -29,8 +29,12 @@ body {
     justify-content: center;
 }
 
+$headline_text_container_margin: 10%;
+$headline_text_container_margin_plus: 14.5%;
+
 #headline-text-container {
-    margin-inline: 10%;
+    margin-left: $headline_text_container_margin_plus;
+    margin-right: $headline_text_container_margin;
 }
 
 #headline-salute {
@@ -79,6 +83,7 @@ body {
     }
     #headline-text-container {
         text-align: center;
+        margin-left: $headline_text_container_margin;
     }
     #headline-salute {
         font-size: 10.7vw;
