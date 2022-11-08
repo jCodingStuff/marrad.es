@@ -9,6 +9,7 @@ window.onload = () => {
  */
 function main() {
     renderTimeline();
+    handleSocialLinks();
 }
 
 /**
@@ -67,7 +68,7 @@ function renderTimeline() {
     );
     // Render blobs
     const xOffset = axisMajorTickWidth/2 + 5;
-    const distance = 100;
+    const distance = 90;
     renderTimelineBlob(  // UM
         svg,
         'um',
@@ -422,5 +423,21 @@ function addEventsToSVGGroup(elements, events) {
                 events.mouseout();
             });
         }
+    }
+}
+
+/**
+ * React to click on social link
+ */
+function handleSocialLinks() {
+    const links = {
+        'github': 'https://github.com/jCodingStuff',
+        'linkedin': 'https://www.linkedin.com/in/marrades/',
+        'youtube': 'https://www.youtube.com/@jCodingStuff',
+    };
+    for (const [name, url] of Object.entries(links)) {
+        document.getElementById(`${name}-social-link`).addEventListener('click', () => {
+            window.open(url);
+        })
     }
 }

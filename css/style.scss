@@ -52,7 +52,7 @@ $headline_text_container_margin_plus: 14.5%;
     background: none;
     border: 1px solid $sand;
     font-family: 'Roboto', sans-serif;
-    font-size: 1.2vw;
+    font-size: 1.45vw;
     color: $sand;
     margin-top: 1.2em;
     padding-inline: 2em;
@@ -74,6 +74,55 @@ $headline_text_container_margin_plus: 14.5%;
     align-items: center;
 }
 
+#links {
+    background-color: white;
+    padding-block: 2.5em;
+}
+
+#links-title {
+    text-align: center;
+    color: $dark-blue;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#social-links {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+$social_link_opacity: 0.65;
+$social_link_diameter: 6em;
+
+.social-link {
+    opacity: $social_link_opacity;
+    background-color: $dark-blue;
+    border-radius: 50%;
+    width: $social_link_diameter;
+    height: $social_link_diameter;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+	align-items: center;
+
+    transition: 500ms;
+}
+
+.social-link:hover, .social-link:focus {
+    opacity: 1;
+}
+
+#license {
+    background-color: $dark-blue;
+    text-align: center;
+    color: white;
+    padding-block: 1.5em;
+    font-size: 1.1em;
+}
+
 @media screen and (orientation: portrait) {
     #header {
         flex-direction: column;
@@ -92,7 +141,7 @@ $headline_text_container_margin_plus: 14.5%;
         font-size: 6.2vw;
     }
     #headline-contact-button {
-        font-size: 4.5vw;
+        font-size: 4.7vw;
     }
     #timeline-container {
         min-height: 500px;
