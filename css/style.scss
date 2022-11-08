@@ -49,22 +49,29 @@ $headline_text_container_margin_plus: 14.5%;
 }
 
 #headline-contact-button {
+    font-size: 1.45vw;
+    margin-top: 1.2em;
+}
+
+.sand-button {
     background: none;
     border: 1px solid $sand;
     font-family: 'Roboto', sans-serif;
-    font-size: 1.45vw;
     color: $sand;
-    margin-top: 1.2em;
     padding-inline: 2em;
     padding-block: 0.33em;
     cursor: pointer;
 
-    transition: color 0.5s, background-color 0.5s;
+    transition: 500ms;
 }
 
-#headline-contact-button:focus, #headline-contact-button:hover {
+.sand-button:focus, .sand-button:hover {
     background-color: $sand;
     color: $dark-blue;
+}
+
+.carousel-learn-more-button {
+    margin-block: 0.7em;
 }
 
 #timeline-container {
@@ -72,6 +79,30 @@ $headline_text_container_margin_plus: 14.5%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#proud-title {
+    text-align: center;
+    font-weight: bold;
+    background-color: white;
+    color: $dark-blue;
+    padding-block: 1em;
+    font-size: 2em;
+}
+
+.carousel-image {
+    object-fit: cover;  // do not stretch image
+    height: 30vw;
+    width: 100%;
+    opacity: 1;
+}
+
+.my-carousel-button {
+    transition: 500ms;
+}
+
+.my-carousel-button:hover, .my-carousel-button:focus {
+    opacity: 1;
 }
 
 #links {
@@ -145,5 +176,9 @@ $social_link_diameter: 6em;
     }
     #timeline-container {
         min-height: 500px;
+    }
+    .carousel-image {
+        height: 10em;
+        opacity: 0.05;
     }
 }
