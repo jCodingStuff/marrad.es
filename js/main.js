@@ -37,10 +37,11 @@ function renderTimeline() {
      */
     const timelineContainer = document.getElementById('timeline-container');
     const timelineContainerHeight = timelineContainer.offsetHeight;
+    const timelineContainerWidth = timelineContainer.offsetWidth;
     const heightPerc = 85;
-    const mobileHeight = timelineContainerHeight*heightPerc/100;
+    const realHeight = timelineContainerHeight*heightPerc/100;
     // Let mobile devices have a fixed size for the svg (otherwise makes scrolling awful)
-    const heightString = isMobile() ? mobileHeight.toFixed(3) + 'px' : `${heightPerc}%`;
+    const heightString = isMobile() ? realHeight.toFixed(3) + 'px' : `${heightPerc}%`;
     // Drawing properties
     const width = 335;
     const xCenter = width/2;
@@ -87,7 +88,13 @@ function renderTimeline() {
     );
     // Render blobs
     const xOffset = axisMajorTickWidth/2 + 5;
-    const distance = 115;
+    let distance = 115;
+    const realWidth = realHeight*width/totalHeight;
+    const widthMargin = 20;
+    // Reduce distance if we go over the width of the screen in a mobile device
+    if (realWidth + widthMargin > timelineContainerWidth) {
+        distance -= 12;
+    }
     renderTimelineBlob(  // UM
         svg,
         'um',

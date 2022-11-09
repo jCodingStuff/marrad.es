@@ -153,6 +153,29 @@ $social_link_diameter: 6em;
     font-size: 1.1em;
 }
 
+@media screen and (orientation: landscape) {
+    @media (min-width: 1891px) {
+        .carousel-image {
+            height: 38em;
+        }
+    }
+    @media (min-width: 2043px) {
+        .carousel-image {
+            height: 40em;
+        }
+    }
+    @media (min-width: 2187px) {
+        .carousel-image {
+            height: 42em;
+        }
+    }
+    @media (min-width: 2449px) {
+        .carousel-image {
+            height: 45em;
+        }
+    }
+}
+
 @media screen and (orientation: portrait) {
     #header {
         flex-direction: column;
@@ -165,13 +188,13 @@ $social_link_diameter: 6em;
         margin-left: $headline_text_container_margin;
     }
     #headline-salute {
-        font-size: 10.7vw;
+        font-size: 11.2vw;
     }
     #headline-subtitle {
-        font-size: 6.2vw;
+        font-size: 6.6vw;
     }
     #headline-contact-button {
-        font-size: 4.7vw;
+        font-size: 5.5vw;
     }
     #timeline-container {
         min-height: 500px;
@@ -179,6 +202,26 @@ $social_link_diameter: 6em;
     .carousel-image {
         height: 14.1em;
         opacity: 0;
+    }
+    @media (min-width: 215px) {
+        .carousel-image {
+            height: 18em;
+        }
+    }
+    @media (min-width: 295px) {
+        .carousel-image {
+            height: 15em;
+        }
+    }
+    @media (min-width: 464px) {
+        .carousel-image {
+            height: 12em;
+        }
+    }
+    @media (min-width: 887px) {
+        .carousel-image {
+            height: 11em;
+        }
     }
     // .my-carousel-text {
         // background-color: rgba(0, 0, 0, 0.7);
