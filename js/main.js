@@ -58,9 +58,9 @@ function renderTimeline() {
     const axisMajorTickWidth = 16;
     const axisTickStrokeWidth = 2.5;
     // Axis tick labels
-    const axisTLSize = 12;
-    const axisTLXOffset = 5;
-    const axisTLYOffset = 4.15;  // center vertically manually since 'dominant-baseline' is not implemented for mobile devices
+    const axisTLSize = 16;
+    const axisTLXOffset = 6.8;
+    const axisTLYOffset = 5.5;  // center vertically manually since 'dominant-baseline' is not implemented for mobile devices
     // Root svg tag TODO: make it accesible with ARIA stuff
     const svg =
         SVG()
