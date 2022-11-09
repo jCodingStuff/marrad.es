@@ -1,0 +1,50 @@
+/* For screen-reader only! */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
+}
+
+// Mixin for outlined classes
+@mixin outlined($width: 1px, $color: red) {
+    border: $width solid $color;
+}
+
+.o-red {
+    @include outlined;
+}
+
+.o-blue {
+    @include outlined($color: blue);
+}
+
+.o-green {
+    @include outlined($color: green);
+}
+
+.o-purple {
+    @include outlined($color: purple);
+}
+
+.roboto-font {
+    font-family: 'Roboto', sans-serif;
+}
+
+.link-no-style {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.link-no-style:hover {
+    color: inherit;
+}
+
+.span-vh {
+    height: 100vh;
+}

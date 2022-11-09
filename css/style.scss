@@ -1,0 +1,235 @@
+@import 'scss/general';
+@import 'scss/colors';
+
+body {
+    background-color: $dark-blue;
+}
+
+#header {
+    width: 100%;
+    background-color: $dark-blue;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.span-vh {
+    height: 100vh;
+}
+
+.header-column {
+    width: 50%;
+}
+
+#headline-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+$headline_text_container_margin: 10%;
+$headline_text_container_margin_plus: 14.5%;
+
+#headline-text-container {
+    margin-left: $headline_text_container_margin_plus;
+    margin-right: $headline_text_container_margin;
+}
+
+#headline-salute {
+    display: block;
+    font-weight: bold;
+    font-size: 4.5vw;
+}
+
+#headline-subtitle {
+    display: block;
+    font-size: 2.5vw;
+}
+
+#headline-contact-button {
+    font-size: 1.45vw;
+    margin-top: 1.2em;
+}
+
+.sand-button {
+    background: none;
+    border: 1px solid $sand;
+    font-family: 'Roboto', sans-serif;
+    color: $sand;
+    padding-inline: 2em;
+    padding-block: 0.33em;
+    cursor: pointer;
+
+    transition: 500ms;
+}
+
+.sand-button:focus, .sand-button:hover {
+    background-color: $sand;
+    color: $dark-blue;
+}
+
+.carousel-learn-more-button {
+    margin-block: 0.7em;
+}
+
+#timeline-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#proud-title {
+    text-align: center;
+    font-weight: bold;
+    background-color: white;
+    color: $dark-blue;
+    padding-block: 1em;
+    font-size: 2em;
+}
+
+.carousel-image {
+    object-fit: cover;  // do not stretch image
+    height: 35em;
+    width: 100%;
+    opacity: 1;
+}
+
+.my-carousel-button {
+    transition: 500ms;
+}
+
+.my-carousel-button:hover, .my-carousel-button:focus {
+    opacity: 1;
+}
+
+#links {
+    background-color: white;
+    padding-block: 2.5em;
+}
+
+#links-title {
+    text-align: center;
+    color: $dark-blue;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#social-links {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+$social_link_opacity: 0.65;
+$social_link_diameter: 6em;
+
+.social-link {
+    opacity: $social_link_opacity;
+    background-color: $dark-blue;
+    border-radius: 50%;
+    width: $social_link_diameter;
+    height: $social_link_diameter;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+	align-items: center;
+
+    transition: 500ms;
+}
+
+.social-link:hover, .social-link:focus {
+    opacity: 1;
+}
+
+#license {
+    background-color: $dark-blue;
+    text-align: center;
+    color: white;
+    padding-block: 1.5em;
+    font-size: 1.1em;
+}
+
+@media screen and (orientation: landscape) {
+    @media (min-width: 1891px) {
+        .carousel-image {
+            height: 38em;
+        }
+    }
+    @media (min-width: 2043px) {
+        .carousel-image {
+            height: 40em;
+        }
+    }
+    @media (min-width: 2187px) {
+        .carousel-image {
+            height: 42em;
+        }
+    }
+    @media (min-width: 2449px) {
+        .carousel-image {
+            height: 45em;
+        }
+    }
+}
+
+@media screen and (orientation: portrait) {
+    #header {
+        flex-direction: column;
+    }
+    .header-column {
+        width: 100%;
+    }
+    #headline-text-container {
+        text-align: center;
+        margin-left: $headline_text_container_margin;
+    }
+    #headline-salute {
+        font-size: 11.2vw;
+    }
+    #headline-subtitle {
+        font-size: 6.6vw;
+    }
+    #headline-contact-button {
+        font-size: 5.5vw;
+    }
+    #timeline-container {
+        min-height: 500px;
+    }
+    .carousel-image {
+        height: 14.1em;
+        opacity: 0;
+    }
+    @media (min-width: 215px) {
+        .carousel-image {
+            height: 18em;
+        }
+    }
+    @media (min-width: 295px) {
+        .carousel-image {
+            height: 15em;
+        }
+    }
+    @media (min-width: 464px) {
+        .carousel-image {
+            height: 12em;
+        }
+    }
+    @media (min-width: 887px) {
+        .carousel-image {
+            height: 11em;
+        }
+    }
+    // .my-carousel-text {
+        // background-color: rgba(0, 0, 0, 0.7);
+        // -webkit-backdrop-filter: blur(3px);
+        // backdrop-filter: blur(3px);
+        // padding-inline: 0.9em;
+        // padding-top: 0.6em;
+        // border-radius: 0.7em;
+        // outline: 1px solid red;
+    // }
+}

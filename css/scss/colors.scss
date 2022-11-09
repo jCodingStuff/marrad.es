@@ -1,0 +1,27 @@
+// Colors
+$dark-blue: #000624;
+$sand: #d9dba7;
+$highlight-1: #DCD6F7;
+$highlight-2: #F06543;
+$highlight-3: #F7B1AB;
+
+// Mixin for colored classes
+@mixin colored($color: white) {
+    color: white;
+}
+
+.c-white {
+    @include colored;
+}
+
+.c-highlight-1 {
+    color: $highlight-1;
+}
+
+.c-highlight-2 {
+    color: $highlight-2;
+}
+
+.c-highlight-3 {
+    color: $highlight-3;
+}
