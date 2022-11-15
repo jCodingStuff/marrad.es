@@ -65,8 +65,9 @@ function renderTimeline() {
     const svg =
         SVG()
         .addTo(timelineContainer)
-        .height(heightString);
-        // .addClass('o-green');
+        // .height(heightString)
+        // .addClass('o-green')
+        .attr('id', 'timeline');
     svg.viewbox(0, 0, width, totalHeight);
     // Timeline axis
     const axis = svg.group();
@@ -92,9 +93,9 @@ function renderTimeline() {
     const realWidth = realHeight*width/totalHeight;
     const widthMargin = 20;
     // Reduce distance if we go over the width of the screen in a mobile device
-    if (realWidth + widthMargin > timelineContainerWidth) {
-        distance -= 12;
-    }
+    // if (realWidth + widthMargin > timelineContainerWidth) {
+    //     distance -= 12;
+    // }
     renderTimelineBlob(  // UM
         svg,
         'um',
