@@ -14,10 +14,6 @@ body {
     justify-content: center;
 }
 
-.span-vh {
-    height: 100vh;
-}
-
 .header-column {
     width: 50%;
 }
@@ -26,6 +22,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 100vh;
 }
 
 $headline_text_container_margin: 10%;
@@ -73,11 +70,17 @@ $headline_text_container_margin_plus: 14.5%;
     margin-block: 0.7em;
 }
 
+$timeline_container_min_height: 700px;
+
 #timeline-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    height: 100vh;
+    padding-block: 3em;
+    min-height: $timeline_container_min_height;
 }
 
 #proud-title {
@@ -196,8 +199,8 @@ $social_link_diameter: 6em;
     #headline-contact-button {
         font-size: 5.5vw;
     }
-    #timeline-container {
-        min-height: 500px;
+    #timeline {
+        width: 93.5%;
     }
     .carousel-image {
         height: 14.1em;

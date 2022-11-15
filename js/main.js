@@ -1,5 +1,7 @@
 "use strict";
 
+import { isMobile } from './utils';
+
 window.onload = () => {
     main();
 }
@@ -23,7 +25,7 @@ function handleHeaderMobile() {
     for (const ele of document.getElementsByClassName('header-column')) {
         const height = ele.offsetHeight;
         ele.style.height = `${height}px`;
-        ele.classList.remove('span-vh');
+        // ele.classList.remove('span-vh');
     }
 }
 
@@ -37,11 +39,9 @@ function renderTimeline() {
      */
     const timelineContainer = document.getElementById('timeline-container');
     const timelineContainerHeight = timelineContainer.offsetHeight;
-    const timelineContainerWidth = timelineContainer.offsetWidth;
     const heightPerc = 85;
     const realHeight = timelineContainerHeight*heightPerc/100;
     // Let mobile devices have a fixed size for the svg (otherwise makes scrolling awful)
-    const heightString = isMobile() ? realHeight.toFixed(3) + 'px' : `${heightPerc}%`;
     // Drawing properties
     const width = 335;
     const xCenter = width/2;
@@ -65,8 +65,9 @@ function renderTimeline() {
     const svg =
         SVG()
         .addTo(timelineContainer)
-        .height(heightString);
-        // .addClass('o-green');
+        // .height(heightString)
+        // .addClass('o-green')
+        .attr('id', 'timeline');
     svg.viewbox(0, 0, width, totalHeight);
     // Timeline axis
     const axis = svg.group();
@@ -88,13 +89,7 @@ function renderTimeline() {
     );
     // Render blobs
     const xOffset = axisMajorTickWidth/2 + 5;
-    let distance = 115;
-    const realWidth = realHeight*width/totalHeight;
-    const widthMargin = 20;
-    // Reduce distance if we go over the width of the screen in a mobile device
-    if (realWidth + widthMargin > timelineContainerWidth) {
-        distance -= 12;
-    }
+    const distance = 115;
     renderTimelineBlob(  // UM
         svg,
         'um',
@@ -450,27 +445,6 @@ function addEventsToSVGGroup(elements, events) {
             });
         }
     }
-}
-
-/**
- * Check if we are in a mobile device
- * @returns `true` if we are in a mobile device, `false` otherwise
- */
-function isMobile() {
-    return (
-        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-        || isIpadOS()
-    );
-}
-
-/**
- * Check if we are in ipadOS
- * @returns `true` if we are in ipadOS, `false` otherwise
- */
-function isIpadOS() {
-    return navigator.maxTouchPoints &&
-        navigator.maxTouchPoints > 2 &&
-        /MacIntel/.test(navigator.platform);
 }
 
 /**
