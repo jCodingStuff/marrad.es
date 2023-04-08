@@ -180,21 +180,21 @@ function renderTimeline() {
         0.75,
         'https://folding.bmc.uu.se/'
     );
-    renderTimelineBlob(  // Dedalo
-        svg,
-        'dedalo',
-        yMargin,
-        xCenter,
-        startYear,
-        heightPerYear,
-        xOffset,
-        distance,
-        'right',
-        2022.60,
-        'assets/svg/dedalo_logo.svg',
-        0.65,
-        'https://dedalo.dev/'
-    );
+    // renderTimelineBlob(  // Dedalo
+    //     svg,
+    //     'dedalo',
+    //     yMargin,
+    //     xCenter,
+    //     startYear,
+    //     heightPerYear,
+    //     xOffset,
+    //     distance,
+    //     'right',
+    //     2022.60,
+    //     'assets/svg/dedalo_logo.svg',
+    //     0.65,
+    //     'https://dedalo.dev/'
+    // );
     renderTimelineBlob(  // MIB
         svg,
         'mib',
@@ -209,6 +209,21 @@ function renderTimeline() {
         'assets/png/mib_coin.png',
         0.75,
         'https://monedaiberica.org/?lang=lg-eng'
+    );
+    renderTimelineBlob(  // Signaturit
+        svg,
+        'signaturit',
+        yMargin,
+        xCenter,
+        startYear,
+        heightPerYear,
+        xOffset,
+        distance,
+        'right',
+        2022.75,
+        'assets/png/signature.png',
+        0.6,
+        'https://www.signaturit.com/'
     );
 }
 
