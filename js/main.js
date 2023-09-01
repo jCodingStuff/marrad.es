@@ -182,7 +182,7 @@ function renderTimeline() {
 		2020.75,
 		'assets/svg/uu_logo.svg',
 		0.75,
-		'http://www.it.uu.se/education/master_programmes/computational_science'
+		'https://www.uu.se/en/study/programme/masters-programme-computational-science'
 	);
 	renderTimelineBlob(  // VSP lab
 		svg,
