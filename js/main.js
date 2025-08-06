@@ -121,8 +121,8 @@ function renderTimeline() {
 		'right',
 		2017.75,
 		'assets/svg/um_logo.svg',
-		0.5, 
-		'https://www.maastrichtuniversity.nl/education/bachelor/data-science-and-artificial-intelligence'
+		0.5,
+		'https://www.maastrichtuniversity.nl/education/bachelor/programmes/data-science-and-artificial-intelligence'
 	);
 	renderTimelineBlob(  // InterUM
 		svg,
@@ -136,7 +136,7 @@ function renderTimeline() {
 		'left',
 		2017.75,
 		'assets/png/interum_logo.png',
-		0.75, 
+		0.75,
 		'https://www.maastrichtuniversity.nl/maastricht-university-ambassadors-team'
 	);
 	renderTimelineBlob(  // APG
@@ -152,7 +152,7 @@ function renderTimeline() {
 		2018.6,
 		'assets/svg/apg_logo.svg',
 		0.67,
-		'https://apg.nl/en/about-apg/groeifabriek/'
+		'https://apg.nl/en/'
 	);
 	renderTimelineBlob(  // EdLab
 		svg,
@@ -182,7 +182,7 @@ function renderTimeline() {
 		2020.75,
 		'assets/svg/uu_logo.svg',
 		0.75,
-		'https://www.uu.se/en/study/programme/masters-programme-computational-science'
+		'https://www.uu.se/en/study/programme-syllabus?query=2598'
 	);
 	renderTimelineBlob(  // VSP lab
 		svg,
@@ -328,8 +328,8 @@ function renderTimelineAxis(
 }
 
 /**
- * 
- * @param svg the SVG.js SVG object 
+ *
+ * @param svg the SVG.js SVG object
  * @param {number | string} id the id of the blob
  * @param {number} yMargin y margin of the drawing
  * @param {number} xCenter the width center
@@ -438,12 +438,12 @@ function renderTimelineBlob(
 /**
  * Add events to an SVG group with overlapping elements
  * so that they do not trigger multiple times
- * 
+ *
  * All elements must have a unique ID
- * 
+ *
  * Supported events are `mouseover`, `mouseout`
  * @param {Array} elements the svg elements inside the group
- * @param {{mouseover?: () => void, mouseout?: () => void}} events 
+ * @param {{mouseover?: () => void, mouseout?: () => void}} events
  */
 function addEventsToSVGGroup(elements, events) {
 	/**
