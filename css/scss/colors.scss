@@ -4,6 +4,7 @@ $sand: #d9dba7;
 $highlight-1: #DCD6F7;
 $highlight-2: #F06543;
 $highlight-3: #F7B1AB;
+$highlight-4: #5fc2b3;
 
 // Mixin for colored classes
 @mixin colored($color: white) {
@@ -24,4 +25,8 @@ $highlight-3: #F7B1AB;
 
 .c-highlight-3 {
     color: $highlight-3;
+}
+
+.c-highlight-4 {
+    color: $highlight-4;
 }
