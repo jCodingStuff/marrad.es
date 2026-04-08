@@ -1,0 +1,155 @@
+{
+    "notFound": {
+        "title": "Page not found",
+        "cta": "Go back home"
+    },
+    "status": {
+        "cta": "Go back home",
+        "500": {
+            "title": "Something went wrong.",
+            "desc": "I'm on it. Please try again in a moment."
+        }
+    },
+    "meta": {
+        "homeTitle": "Julián Marrades",
+        "home": "Founder and researcher from Valencia, Spain. I build systems that are fast, scalable, and meaningful. The stack changes. The quality doesn't."
+    },
+    "footer": {
+        "quote": "\"Another world is possible. Another world is certain.\" - J.L. Sampedro",
+        "copyright": "© 2026 Julián Marrades. Licensed under MIT."
+    },
+    "home": {
+        "title": "Building another<br class=\"br-tablet-landscape\"> future",
+        "subtitle": "from Valencia, Spain.",
+        "projects": {
+            "title": "What defines me",
+            "list": [
+                {
+                    "name": "Alfara Global",
+                    "description": "Connecting international students with housing, services, and community near Valencia.",
+                    "buttons": [
+                        {
+                            "label": "Site",
+                            "href": "https://alfaraglobal.com"
+                        },
+                        {
+                            "label": "Instagram",
+                            "href": "https://www.instagram.com/alfaraglobal"
+                        },
+                        {
+                            "label": "Facebook",
+                            "href": "https://www.facebook.com/people/Alfara-Global/61563034137993"
+                        }
+                    ]
+                },
+                {
+                    "name": "The Alexandria Chemistry Toolkit",
+                    "description": "Evolutionary machine learning of physics-based force fields in high-dimensional parameter space. Digital Discovery (RSC). ★16, 1 fork.",
+                    "buttons": [
+                        {
+                            "label": "Paper",
+                            "href": "https://doi.org/10.1039/D5DD00178A"
+                        },
+                        {
+                            "label": "Code",
+                            "href": "https://github.com/AlexandriaChemistry/ACT"
+                        }
+                    ]
+                },
+                {
+                    "name": "Signaturit Group",
+                    "description": "Turned a post-acquisition data disaster into production-ready ML-ready infrastructure. Three companies, one engineer.",
+                    "buttons": [
+                        {
+                            "label": "Site",
+                            "href": "https://www.signaturit.com/"
+                        }
+                    ]
+                },
+                {
+                    "name": "Analysis toolkit for Moneda Ibérica",
+                    "description": "Data visualization tools for the award-winning MIB numismatics project. Bulgarian Numismatic Journal.",
+                    "buttons": [
+                        {
+                            "label": "Paper",
+                            "href": "https://bulgnj.com/index.php/e-journal/article/view/164"
+                        },
+                        {
+                            "label": "Site",
+                            "href": "https://monedaiberica.org/?lang=lg-eng"
+                        },
+                        {
+                            "label": "Toolkit",
+                            "href": "https://monedaiberica.org/v5/analysis?lang=lg-eng"
+                        }
+                    ]
+                },
+                {
+                    "name": "Call center optimization",
+                    "description": "Bachelor thesis. Abstracting and optimally staffing a real-life call center with multi-skill priority routing. Now developing an open-source Rust library.",
+                    "buttons": [
+                        {
+                            "label": "Paper",
+                            "href": "/assets/docs/BScThesisJulianMarrades.pdf"
+                        },
+                        {
+                            "label": "OpenCCT",
+                            "href": "https://github.com/jCodingStuff/opencct"
+                        }
+                    ]
+                },
+                {
+                    "name": "Coordinated resource collection",
+                    "description": "Centralized cooperative multi-agent reinforcement learning. MSc Computational Science. ★13, 6 forks.",
+                    "buttons": [
+                        {
+                            "label": "Report",
+                            "href": "/assets/docs/NCMML_CoordinatedResourceCollection.pdf"
+                        },
+                        {
+                            "label": "Code",
+                            "href": "https://github.com/jCodingStuff/NCMMLProject"
+                        },
+                        {
+                            "label": "Video",
+                            "href": "https://youtu.be/tYtp1F1NswY?si=9YlWAYM52H__J4ks"
+                        }
+                    ]
+                },
+                {
+                    "name": "pyfect",
+                    "description": "A Python-native effect system for modern async codebases. In active development.",
+                    "buttons": [
+                        {
+                            "label": "Docs",
+                            "href": "https://pyfect.readthedocs.io/"
+                        },
+                        {
+                            "label": "Code",
+                            "href": "https://github.com/pyfect/pyfect"
+                        }
+                    ]
+                },
+                {
+                    "name": "DEGRADAO & session guitarist",
+                    "description": "Orchestral-scale sound with a small ensemble & session guitar services. Handle bookings, contracts & live tech.",
+                    "buttons": [
+                        {
+                            "label": "Instagram",
+                            "href": "https://www.instagram.com/degradaomusic/"
+                        },
+                        {
+                            "label": "Facebook",
+                            "href": "https://www.facebook.com/degradao"
+                        },
+                        {
+                            "label": "TikTok",
+                            "href": "https://www.tiktok.com/@degradaomusic"
+                        }
+                    ]
+                }
+            ],
+            "more": "Not enough? Check my <a href=\"/assets/docs/cv_julian_marrades.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">CV</a>."
+        }
+    }
+}

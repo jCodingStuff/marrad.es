@@ -1,0 +1,155 @@
+{
+    "notFound": {
+        "title": "Página no encontrada",
+        "cta": "Volver al inicio"
+    },
+    "status": {
+        "cta": "Volver al inicio",
+        "500": {
+            "title": "Algo ha fallado.",
+            "desc": "Estoy en ello. Por favor, inténtalo de nuevo en un momento."
+        }
+    },
+    "meta": {
+        "homeTitle": "Julián Marrades",
+        "home": "Founder and researcher from Valencia, Spain. I build systems that are fast, scalable, and meaningful. The stack changes. The quality doesn't."
+    },
+    "footer": {
+        "quote": "\"Otro mundo es posible. Otro mundo es seguro.\" - J.L. Sampedro",
+        "copyright": "© 2026 Julián Marrades. Licencia MIT."
+    },
+    "home": {
+        "title": "Creando otro<br class=\"br-tablet-landscape\"> futuro",
+        "subtitle": "desde Valencia, España."
+    },
+    "projects": {
+        "title": "Lo que me define",
+        "list": [
+            {
+                "name": "Alfara Global",
+                "description": "Vivienda, servicios y comunidad para estudiantes internacionales cerca de Valencia.",
+                "buttons": [
+                    {
+                        "label": "Web",
+                        "href": "https://alfaraglobal.com/es"
+                    },
+                    {
+                        "label": "Instagram",
+                        "href": "https://www.instagram.com/alfaraglobal"
+                    },
+                    {
+                        "label": "Facebook",
+                        "href": "https://www.facebook.com/people/Alfara-Global/61563034137993"
+                    }
+                ]
+            },
+            {
+                "name": "The Alexandria Chemistry Toolkit",
+                "description": "Parametrización de campos de fuerza moleculares mediante algoritmos evolutivos. Digital Discovery (RSC). ★16, 1 fork.",
+                "buttons": [
+                    {
+                        "label": "Artículo",
+                        "href": "https://doi.org/10.1039/D5DD00178A"
+                    },
+                    {
+                        "label": "Código",
+                        "href": "https://github.com/AlexandriaChemistry/ACT"
+                    }
+                ]
+            },
+            {
+                "name": "Signaturit Group",
+                "description": "De desastre de datos post-adquisición a infraestructura de ML productiva. Tres empresas, un ingeniero.",
+                "buttons": [
+                    {
+                        "label": "Web",
+                        "href": "https://www.signaturit.com/es/"
+                    }
+                ]
+            },
+            {
+                "name": "Kit de análisis para Moneda Ibérica",
+                "description": "Herramientas de visualización de datos para el galardonado proyecto numismático MIB. Bulgarian Numismatic Journal.",
+                "buttons": [
+                    {
+                        "label": "Artículo",
+                        "href": "https://bulgnj.com/index.php/e-journal/article/view/164"
+                    },
+                    {
+                        "label": "Web",
+                        "href": "https://monedaiberica.org/?lang=lg-spa"
+                    },
+                    {
+                        "label": "Kit",
+                        "href": "https://monedaiberica.org/v5/analysis?lang=lg-spa"
+                    }
+                ]
+            },
+            {
+                "name": "Optimización de call center",
+                "description": "Tesis de grado. Staffing óptimo de un call center real con enrutamiento multiprioridad. En desarrollo como librería open-source en Rust desde cero.",
+                "buttons": [
+                    {
+                        "label": "Artículo",
+                        "href": "/assets/docs/BScThesisJulianMarrades.pdf"
+                    },
+                    {
+                        "label": "OpenCCT",
+                        "href": "https://github.com/jCodingStuff/opencct"
+                    }
+                ]
+            },
+            {
+                "name": "Recolección coordinada de recursos",
+                "description": "Aprendizaje por refuerzo multi-agente cooperativo centralizado. MSc Computational Science. ★13, 6 forks.",
+                "buttons": [
+                    {
+                        "label": "Informe",
+                        "href": "/assets/docs/NCMML_CoordinatedResourceCollection.pdf"
+                    },
+                    {
+                        "label": "Código",
+                        "href": "https://github.com/jCodingStuff/NCMMLProject"
+                    },
+                    {
+                        "label": "Vídeo",
+                        "href": "https://youtu.be/tYtp1F1NswY?si=9YlWAYM52H__J4ks"
+                    }
+                ]
+            },
+            {
+                "name": "pyfect",
+                "description": "Sistema de efectos para Python moderno y asíncrono. En desarrollo activo.",
+                "buttons": [
+                    {
+                        "label": "Docs",
+                        "href": "https://pyfect.readthedocs.io/"
+                    },
+                    {
+                        "label": "Código",
+                        "href": "https://github.com/pyfect/pyfect"
+                    }
+                ]
+            },
+            {
+                "name": "DEGRADAO & guitarrista de sesión",
+                "description": "Sonido orquestal con ensemble reducido y guitarra de sesión. Gestión de bolos, contratos y técnica en directo.",
+                "buttons": [
+                    {
+                        "label": "Instagram",
+                        "href": "https://www.instagram.com/degradaomusic/"
+                    },
+                    {
+                        "label": "Facebook",
+                        "href": "https://www.facebook.com/degradao"
+                    },
+                    {
+                        "label": "TikTok",
+                        "href": "https://www.tiktok.com/@degradaomusic"
+                    }
+                ]
+            }
+        ],
+        "more": "Quieres saber más? Mira mi <a href=\"/assets/docs/cv_julian_marrades.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">CV</a>."
+    }
+}
