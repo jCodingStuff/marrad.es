@@ -24,6 +24,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 40px;
 }
 
 .hero-section .container {
@@ -32,10 +33,14 @@
 }
 
 .hero-section .container:first-of-type {
-  padding-block-start: 50px;
+  padding-block-start: clamp(20px, 5svh, 50px);
 }
 
 .hero-section .container:last-of-type {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding-block-end: 18px;
 }
 
@@ -91,19 +96,37 @@
 }
 
 .hero-section__social svg {
-  height: 16px;
+  height: 15px;
   width: auto;
   display: block;
 }
 
-.hero-section__portrait {
-  position: absolute;
-  bottom: calc(-1 * var(--hero-portrait-offset));
-  left: var(--hero-portrait-padding-inline);
+.hero-section__portrait-wrap {
+  margin-block-start: auto;
+  margin-block-end: calc(-1 * var(--hero-portrait-offset));
+  align-self: center;
   width: calc(100% - 2 * var(--hero-portrait-padding-inline));
-  height: auto;
+  min-width: 300px;
+  max-width: 500px;
+  position: relative;
 }
 
+.hero-section__portrait-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: linear-gradient(to bottom, transparent, var(--kawaii-silver));
+  pointer-events: none;
+}
+
+.hero-section__portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
 .hero-section__scroll {
   display: flex;
@@ -128,17 +151,6 @@
   display: block;
 }
 
-.hero-section::after {
-  content: '';
-  position: absolute;
-  bottom: calc(-1 * var(--hero-portrait-offset));
-  left: var(--hero-portrait-padding-inline);
-  right: var(--hero-portrait-padding-inline);
-  height: 10px;
-  background: linear-gradient(to bottom, transparent, var(--kawaii-silver));
-  pointer-events: none;
-  z-index: 1;
-}
 
 /* ============================================================
    PROJECTS SECTION
@@ -256,6 +268,14 @@
 /* ============================================================
    MEDIA QUERIES
    ============================================================ */
+
+/* Narrow mobile + very tall screen: pin above-fold to 1000px */
+@media (max-width: 767px) and (min-height: 1001px) {
+  .above-fold {
+    min-height: 1000px;
+    max-height: 1000px;
+  }
+}
 
 /* Tablet portrait (768px+) */
 @media (min-width: 768px) {
