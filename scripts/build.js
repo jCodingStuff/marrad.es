@@ -20,14 +20,17 @@ const LOCALES = fs.readdirSync(LOCALES_DIR)
 if (!LOCALES.includes(DEFAULT_LOCALE)) throw new Error(`Default locale '${DEFAULT_LOCALE}' not found in locales/`);
 if (!process.env.SITE_URL) throw new Error('SITE_URL environment variable is required');
 const SITE_URL = process.env.SITE_URL;
-if (!process.env.API_URL) throw new Error('API_URL environment variable is required');
-const API_URL = process.env.API_URL;
+const DOCS_DIR = path.join(ROOT, 'assets', 'docs');
+const docAssets = fs.existsSync(DOCS_DIR)
+  ? fs.readdirSync(DOCS_DIR).map(f => `assets/docs/${f}`)
+  : [];
 
 const ALWAYS_INCLUDE_ASSETS = [
   ...LOCALES.map(l => `assets/og/${l}.png`),
+  ...docAssets,
 ];
 
-const ENV_VARS = { SITE_URL, API_URL };
+const ENV_VARS = { SITE_URL };
 
 function substituteEnv(src) {
   return src.replace(/%%(\w+)%%/g, (_match, key) => {

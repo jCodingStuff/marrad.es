@@ -11,7 +11,7 @@ const DIST = path.join(ROOT, 'dist');
 const vars = loadEnv('.env.pre', { override: true });
 const env = { ...process.env, ...vars };
 
-for (const key of ['SITE_URL', 'API_URL', 'USER', 'PASSWORD', 'HTPASSWD_PATH']) {
+for (const key of ['SITE_URL', 'USER', 'PASSWORD', 'HTPASSWD_PATH']) {
   if (!env[key]) throw new Error(`Missing required variable in .env.pre: ${key}`);
 }
 
