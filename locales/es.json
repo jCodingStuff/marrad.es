@@ -21,6 +21,7 @@
     "home": {
         "title": "Creando otro<br class=\"br-tablet-landscape\"> futuro",
         "subtitle": "desde Valencia, España.",
+        "scroll": "proyectos",
         "projects": {
         "title": "Lo que me define",
         "list": [

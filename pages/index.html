@@ -13,10 +13,22 @@
 <body>
 
 <!--#include "/partials/icons.html"-->
-<!--#include "/partials/header.html"-->
+
+<div class="above-fold">
+  <!--#include "/partials/header.html"-->
+  <section class="hero-section">
+    <img class="hero-section__portrait" src="/assets/images/portrait.webp" alt="Julián Marrades">
+    <div class="container">
+      <a class="hero-section__scroll" href="#projects" aria-label="Scroll to projects">
+        <span data-i18n="home.scroll"></span>
+        <svg aria-hidden="true"><use href="#icon-arrow-down"></use></svg>
+      </a>
+    </div>
+  </section>
+</div>
 
   <main>
-    <section class="projects-section">
+    <section class="projects-section" id="projects">
       <div class="container">
         <h2 class="projects-section__title" data-i18n="home.projects.title"></h2>
         <ul class="projects-list" data-i18n-list="home.projects.list">

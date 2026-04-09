@@ -4,6 +4,75 @@
 :root {
   --projects-padding-block-start: 60px;
   --projects-padding-block-end: 30px;
+  --hero-portrait-padding-inline: 20px;
+  --hero-portrait-offset: 20px;
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.above-fold {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-section {
+  flex: 1;
+  position: relative;
+  background-color: var(--kawaii-silver);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.hero-section__portrait {
+  position: absolute;
+  bottom: calc(-1 * var(--hero-portrait-offset));
+  left: var(--hero-portrait-padding-inline);
+  width: calc(100% - 2 * var(--hero-portrait-padding-inline));
+  height: auto;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  padding-block-end: 18px;
+}
+
+.hero-section__scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--kawaii-silver);
+}
+
+.hero-section__scroll span {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.7rem;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hero-section__scroll svg {
+  width: 12px;
+  height: 7px;
+  display: block;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: calc(-1 * var(--hero-portrait-offset));
+  left: var(--hero-portrait-padding-inline);
+  right: var(--hero-portrait-padding-inline);
+  height: 10px;
+  background: linear-gradient(to bottom, transparent, var(--kawaii-silver));
+  pointer-events: none;
+  z-index: 1;
 }
 
 /* ============================================================

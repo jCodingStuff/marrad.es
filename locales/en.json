@@ -21,6 +21,7 @@
     "home": {
         "title": "Building another<br class=\"br-tablet-landscape\"> future",
         "subtitle": "from Valencia, Spain.",
+        "scroll": "projects",
         "projects": {
             "title": "What defines me",
             "list": [
