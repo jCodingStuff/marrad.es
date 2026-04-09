@@ -45,8 +45,8 @@
    PROJECT CARD
    ============================================================ */
 .projects-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
@@ -72,7 +72,7 @@
 .project-card__content {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 3px;
   padding-block: 2px;
 }
 
@@ -94,7 +94,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 8px;
-  margin-block-start: 4px;
+  margin-block-start: auto;
+  padding-block-start: 6px;
 }
 
 .project-card__btn {
@@ -116,4 +117,37 @@
   background-color: var(--metallic-black);
   color: var(--kawaii-silver);
   font-weight: 400;
+}
+
+/* ============================================================
+   MEDIA QUERIES
+   ============================================================ */
+
+/* Tablet portrait (768px+) */
+@media (min-width: 768px) {
+  .projects-list {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+  }
+}
+
+/* Tablet landscape (1024px+) */
+@media (min-width: 1024px) {
+  .projects-list {
+    column-gap: 50px;
+  }
+}
+
+/* Laptop+ (1280px+) */
+@media (min-width: 1280px) {
+  .projects-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Large desktop (1600px+) */
+@media (min-width: 1600px) {
+  .projects-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
