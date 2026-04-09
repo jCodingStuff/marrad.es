@@ -15,14 +15,13 @@
         "home": "Founder and researcher from Valencia, Spain. I build systems that are fast, scalable, and meaningful. The stack changes. The quality doesn't."
     },
     "footer": {
-        "quote": "\"Otro mundo es posible. Otro mundo es seguro.\" - J.L. Sampedro",
+        "quote": "\"Otro mundo es posible. Otro mundo es seguro.\"<br class=\"br-mobile\"> - J.L. Sampedro",
         "copyright": "© 2026 Julián Marrades. Licencia MIT."
     },
     "home": {
         "title": "Creando otro<br class=\"br-tablet-landscape\"> futuro",
-        "subtitle": "desde Valencia, España."
-    },
-    "projects": {
+        "subtitle": "desde Valencia, España.",
+        "projects": {
         "title": "Lo que me define",
         "list": [
             {
@@ -151,5 +150,6 @@
             }
         ],
         "more": "Quieres saber más? Mira mi <a href=\"/assets/docs/cv_julian_marrades.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">CV</a>."
+        }
     }
 }

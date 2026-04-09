@@ -1,0 +1,42 @@
+/* ============================================================
+   CUSTOM PROPERTIES
+   ============================================================ */
+:root {
+  --projects-padding-block-start: 60px;
+  --projects-padding-block-end: 30px;
+}
+
+/* ============================================================
+   PROJECTS SECTION
+   ============================================================ */
+.projects-section {
+  padding-block: var(--projects-padding-block-start) var(--projects-padding-block-end);
+}
+
+.projects-section .container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.projects-section__title {
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--cod-gray);
+  text-align: left;
+}
+
+.projects-section__more {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  color: var(--metallic-black);
+  text-align: left;
+}
+
+.projects-section__more a {
+  text-decoration: underline;
+}

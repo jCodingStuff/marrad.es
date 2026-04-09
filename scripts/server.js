@@ -11,10 +11,7 @@ const ROOT = path.join(__dirname, '..');
 require('./load-env')('.env.dev');
 
 const PORT = process.env.DEV_PORT || 3000;
-if (!process.env.API_URL) throw new Error('API_URL environment variable is required');
-const API_URL = process.env.API_URL;
-
-const ENV_VARS = { API_URL };
+const ENV_VARS = {};
 
 function substituteEnv(src) {
   return src.replace(/%%(\w+)%%/g, (_match, key) => {
