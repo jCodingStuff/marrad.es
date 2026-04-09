@@ -9,13 +9,14 @@
   --angora-white: #F6F6F6;
   --kawaii-silver: #DEDEDE;
   --dark-silver: #AEAEAE;
+  --metallic-black-transparent: rgba(43, 43, 43, 0.4);
 
   /* Typography */
   --font-sans: 'Inter', sans-serif;
   --font-serif: 'Playfair Display', serif;
 
   /* Layout */
-  --container-padding-inline: 35px;
+  --container-padding-inline: 30px;
 }
 
 /* ============================================================

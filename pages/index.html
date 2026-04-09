@@ -19,8 +19,20 @@
     <section class="projects-section">
       <div class="container">
         <h2 class="projects-section__title" data-i18n="home.projects.title"></h2>
-        <ul class="projects-list">
-          <!-- projects list -->
+        <ul class="projects-list" data-i18n-list="home.projects.list">
+          <template data-i18n-list-item>
+            <li class="project-card">
+              <div class="project-card__content">
+                <h3 class="project-card__name" data-i18n-field="name"></h3>
+                <p class="project-card__description" data-i18n-field="description"></p>
+                <div class="project-card__buttons" data-i18n-list="buttons">
+                  <template data-i18n-list-item>
+                    <a class="project-card__btn" data-i18n-field-href="href" target="_blank" rel="noopener noreferrer" data-i18n-field="label"></a>
+                  </template>
+                </div>
+              </div>
+            </li>
+          </template>
         </ul>
         <p class="projects-section__more" data-i18n="home.projects.more"></p>
       </div>

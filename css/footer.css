@@ -21,7 +21,7 @@
 .site-footer__divider {
   width: 100%;
   border: none;
-  border-top: 0.5px solid var(--metallic-black);
+  border-top: 1px solid var(--metallic-black-transparent);
 }
 
 .site-footer__quote {

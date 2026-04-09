@@ -40,3 +40,80 @@
 .projects-section__more a {
   text-decoration: underline;
 }
+
+/* ============================================================
+   PROJECT CARD
+   ============================================================ */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+}
+
+.project-card::before {
+  content: '';
+  display: block;
+  flex-shrink: 0;
+  width: 4px;
+  background-color: var(--dark-silver);
+  transition: background-color 0.2s ease;
+}
+
+.project-card:hover::before {
+  background-color: var(--metallic-black);
+}
+
+.project-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-block: 2px;
+}
+
+.project-card__name {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--cod-gray);
+}
+
+.project-card__description {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--metallic-black);
+}
+
+.project-card__buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block-start: 4px;
+}
+
+.project-card__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 200;
+  color: var(--metallic-black);
+  min-width: 80px;
+  padding-inline: 10px;
+  padding-block: 4px;
+  border: 1px solid var(--metallic-black-transparent);
+  transition: background-color 0.2s ease, color 0.2s ease, font-weight 0.2s ease;
+}
+
+.project-card__btn:hover {
+  background-color: var(--metallic-black);
+  color: var(--kawaii-silver);
+  font-weight: 400;
+}
