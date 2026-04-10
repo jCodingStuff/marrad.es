@@ -321,6 +321,7 @@
     --hero-portrait-aspect-ratio: 0.6472;
     --hero-portrait-name-right-limit: clamp(-135px, -10.47svh, -47px);
     --hero-portrait-name-screen-margin: 40px;
+    --hero-info-lang-offset: 0px;
   }
 
   .projects-list {
@@ -352,8 +353,8 @@
 
   .hero-section .container:first-of-type {
     position: absolute;
-    top: calc(var(--hero-info-top-fraction) * 100% - 7px);
-    left: max(var(--container-padding-inline), calc((100vw - var(--hero-portrait-aspect-ratio) * max(100svh, var(--hero-portrait-min-height-landscape))) / 2 + var(--hero-info-portrait-left-offset)));
+    top: calc(var(--hero-info-top-fraction) * 100% - 4px);
+    left: max(var(--container-padding-inline), calc((100vw - var(--hero-portrait-aspect-ratio) * max(100svh, var(--hero-portrait-min-height-landscape))) / 2 + var(--hero-info-portrait-left-offset) + var(--hero-info-lang-offset)));
     right: auto;
     padding-inline: 0;
     padding-block-start: 0;
@@ -400,7 +401,14 @@
    slope=0 → no movement; slope=-0.065 → tracks portrait at ~40% width; slope=-0.3236 → tracks left edge (too fast) */
 @media (min-width: 1024px) and (min-height: 726px) {
   .hero-section .container:first-of-type {
-    left: max(var(--container-padding-inline), calc(50vw - 369.6px - 0.195 * (100svh - 725px)));
+    left: max(var(--container-padding-inline), calc(50vw - 369.6px - 0.195 * (100svh - 725px) + var(--hero-info-lang-offset)));
+  }
+}
+
+/* Spanish: longer single-line title needs extra left offset */
+@media (min-width: 1024px) {
+  :lang(es) {
+    --hero-info-lang-offset: -30px;
   }
 }
 
