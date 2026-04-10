@@ -313,11 +313,11 @@
 /* Tablet landscape (1024px+) */
 @media (min-width: 1024px) {
   :root {
-    --hero-info-top: 35%;
-    --hero-info-inline-start: 8vw;
+    --hero-info-top-fraction: 0.4035;
+    --hero-info-portrait-left-offset: clamp(-135px, calc(-9.09svh - 69px), -110px);
     --hero-portrait-min-height-landscape: 450px;
     --hero-portrait-overflow-top: 42px;
-    --hero-portrait-padding-inline: 40px;
+    --hero-portrait-padding-inline: 70px;
     --hero-portrait-aspect-ratio: 0.6472;
     --hero-portrait-name-right-limit: clamp(-135px, -10.47svh, -47px);
     --hero-portrait-name-screen-margin: 40px;
@@ -352,8 +352,8 @@
 
   .hero-section .container:first-of-type {
     position: absolute;
-    top: var(--hero-info-top);
-    left: var(--hero-info-inline-start);
+    top: calc(var(--hero-info-top-fraction) * 100% - 7px);
+    left: max(var(--container-padding-inline), calc((100vw - var(--hero-portrait-aspect-ratio) * max(100svh, var(--hero-portrait-min-height-landscape))) / 2 + var(--hero-info-portrait-left-offset)));
     right: auto;
     padding-inline: 0;
     padding-block-start: 0;
@@ -361,10 +361,28 @@
 
   .hero-section__info {
     align-items: flex-start;
+    gap: clamp(11px, calc(1.45svh + 4.46px), 15px);
   }
 
   .hero-section__text {
     text-align: left;
+  }
+
+  .hero-section__text h1 {
+    font-size: clamp(1.32rem, calc(2.79svh + 8.55px), 1.8rem);
+    margin-block-end: clamp(1px, calc(0.36svh - 0.64px), 2px);
+  }
+
+  .hero-section__text p {
+    font-size: clamp(0.7rem, calc(1.45svh + 4.66px), 0.95rem);
+  }
+
+  .hero-section__socials {
+    gap: clamp(7px, calc(1.09svh + 2.09px), 10px);
+  }
+
+  .hero-section__social svg {
+    height: clamp(11px, calc(1.45svh + 4.46px), 15px);
   }
 
   .hero-section__portrait-name {
@@ -373,6 +391,16 @@
       clamp(var(--hero-portrait-name-right-limit), calc(var(--container-padding-inline) - (100vw - var(--hero-portrait-max-width)) / 2), var(--hero-portrait-name-right)),
       calc(var(--hero-portrait-name-screen-margin) - max(var(--hero-portrait-padding-inline), (100vw - var(--hero-portrait-aspect-ratio) * max(100svh, var(--hero-portrait-min-height-landscape))) / 2))
     );
+  }
+}
+
+/* Tablet landscape tall (1024px+ × 726px+): track info section above Phase 1.
+   Formula: base@725px + slope × (100svh - 725px).
+   Continuity at 725px is automatic — only adjust the slope coefficient.
+   slope=0 → no movement; slope=-0.065 → tracks portrait at ~40% width; slope=-0.3236 → tracks left edge (too fast) */
+@media (min-width: 1024px) and (min-height: 726px) {
+  .hero-section .container:first-of-type {
+    left: max(var(--container-padding-inline), calc(50vw - 369.6px - 0.195 * (100svh - 725px)));
   }
 }
 
