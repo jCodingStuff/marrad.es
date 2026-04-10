@@ -6,6 +6,8 @@
   --projects-padding-block-end: 30px;
   --hero-portrait-padding-inline: 20px;
   --hero-portrait-offset: 20px;
+  --hero-portrait-min-width: 300px;
+  --hero-portrait-max-width: 500px;
   --hero-portrait-name-right: 0px;
   --hero-portrait-name-right-limit: -85px;
   --hero-portrait-name-screen-margin: 10px;
@@ -109,8 +111,8 @@
   margin-block-end: calc(-1 * var(--hero-portrait-offset));
   align-self: center;
   width: calc(100% - 2 * var(--hero-portrait-padding-inline));
-  min-width: 300px;
-  max-width: 500px;
+  min-width: var(--hero-portrait-min-width);
+  max-width: var(--hero-portrait-max-width);
   position: relative;
 }
 
@@ -135,8 +137,8 @@
   position: absolute;
   top: 45.5%;
   right: max(
-    clamp(var(--hero-portrait-name-right-limit), calc(var(--container-padding-inline) - (100vw - 500px) / 2), var(--hero-portrait-name-right)),
-    clamp(calc(var(--hero-portrait-name-screen-margin) - (100vw - 300px) / 2), calc(var(--hero-portrait-name-screen-margin) - var(--hero-portrait-padding-inline)), calc(var(--hero-portrait-name-screen-margin) - (100vw - 500px) / 2))
+    clamp(var(--hero-portrait-name-right-limit), calc(var(--container-padding-inline) - (100vw - var(--hero-portrait-max-width)) / 2), var(--hero-portrait-name-right)),
+    clamp(calc(var(--hero-portrait-name-screen-margin) - (100vw - var(--hero-portrait-min-width)) / 2), calc(var(--hero-portrait-name-screen-margin) - var(--hero-portrait-padding-inline)), calc(var(--hero-portrait-name-screen-margin) - (100vw - var(--hero-portrait-max-width)) / 2))
   );
   font-family: var(--font-serif);
   font-weight: 600;
@@ -310,8 +312,67 @@
 
 /* Tablet landscape (1024px+) */
 @media (min-width: 1024px) {
+  :root {
+    --hero-info-top: 35%;
+    --hero-info-inline-start: 8vw;
+    --hero-portrait-min-height-landscape: 450px;
+    --hero-portrait-overflow-top: 42px;
+    --hero-portrait-padding-inline: 40px;
+    --hero-portrait-aspect-ratio: 0.6472;
+    --hero-portrait-name-right-limit: clamp(-135px, -10.47svh, -45px);
+    --hero-portrait-name-screen-margin: 40px;
+  }
+
   .projects-list {
     column-gap: 50px;
+  }
+
+  .above-fold {
+    min-height: max(100svh, var(--hero-portrait-min-height-landscape));
+    overflow-x: clip;
+  }
+
+  .hero-section__portrait-wrap {
+    position: absolute;
+    top: calc(-1 * var(--hero-portrait-overflow-top));
+    bottom: calc(-1 * var(--hero-portrait-offset));
+    left: 0;
+    right: 0;
+    height: calc(100% + var(--hero-portrait-offset) + var(--hero-portrait-overflow-top));
+    width: fit-content;
+    min-width: unset;
+    max-width: calc(100% - 2 * var(--hero-portrait-padding-inline));
+    margin-inline: auto;
+  }
+
+  .hero-section__portrait {
+    width: auto;
+    height: 100%;
+  }
+
+  .hero-section .container:first-of-type {
+    position: absolute;
+    top: var(--hero-info-top);
+    left: var(--hero-info-inline-start);
+    right: auto;
+    padding-inline: 0;
+    padding-block-start: 0;
+  }
+
+  .hero-section__info {
+    align-items: flex-start;
+  }
+
+  .hero-section__text {
+    text-align: left;
+  }
+
+  .hero-section__portrait-name {
+    font-size: clamp(4.2rem, 15svh, 13rem);
+    right: max(
+      clamp(var(--hero-portrait-name-right-limit), calc(var(--container-padding-inline) - (100vw - var(--hero-portrait-max-width)) / 2), var(--hero-portrait-name-right)),
+      calc(var(--hero-portrait-name-screen-margin) - max(var(--hero-portrait-padding-inline), (100vw - var(--hero-portrait-aspect-ratio) * max(100svh, var(--hero-portrait-min-height-landscape))) / 2))
+    );
   }
 }
 
