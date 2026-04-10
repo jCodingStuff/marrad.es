@@ -6,6 +6,9 @@
   --projects-padding-block-end: 30px;
   --hero-portrait-padding-inline: 20px;
   --hero-portrait-offset: 20px;
+  --hero-portrait-name-right: 0px;
+  --hero-portrait-name-right-limit: -85px;
+  --hero-portrait-name-screen-margin: 10px;
 }
 
 /* ============================================================
@@ -126,6 +129,26 @@
   display: block;
   width: 100%;
   height: auto;
+}
+
+.hero-section__portrait-name {
+  position: absolute;
+  top: 45.5%;
+  right: max(
+    clamp(var(--hero-portrait-name-right-limit), calc(var(--container-padding-inline) - (100vw - 500px) / 2), var(--hero-portrait-name-right)),
+    clamp(calc(var(--hero-portrait-name-screen-margin) - (100vw - 300px) / 2), calc(var(--hero-portrait-name-screen-margin) - var(--hero-portrait-padding-inline)), calc(var(--hero-portrait-name-screen-margin) - (100vw - 500px) / 2))
+  );
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-style: normal;
+  font-size: clamp(3.5rem, 17.35vw, 7.25rem);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  text-align: right;
+  color: var(--kawaii-silver);
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .hero-section__scroll {
