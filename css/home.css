@@ -408,7 +408,7 @@
 /* Spanish: longer single-line title needs extra left offset */
 @media (min-width: 1024px) {
   :lang(es) {
-    --hero-info-lang-offset: -30px;
+    --hero-info-lang-offset: -15px;
   }
 }
 
