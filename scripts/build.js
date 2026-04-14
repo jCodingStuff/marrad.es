@@ -7,7 +7,8 @@ const { pagePathFromFile, applyTranslations } = require('./translate');
 
 const ROOT = path.join(__dirname, '..');
 
-require('./load-env')('.env.pro');
+const fileVars = require('./load-env')('.env.pro');
+const ENV_VARS = Object.fromEntries(Object.keys(fileVars).map(k => [k, process.env[k]]));
 
 const PAGES = path.join(ROOT, 'pages');
 const DIST = path.join(ROOT, 'dist');
@@ -18,8 +19,8 @@ const LOCALES = fs.readdirSync(LOCALES_DIR)
   .map(f => f.replace('.json', ''))
   .sort((a, b) => a === DEFAULT_LOCALE ? -1 : b === DEFAULT_LOCALE ? 1 : a.localeCompare(b));
 if (!LOCALES.includes(DEFAULT_LOCALE)) throw new Error(`Default locale '${DEFAULT_LOCALE}' not found in locales/`);
-if (!process.env.SITE_URL) throw new Error('SITE_URL environment variable is required');
-const SITE_URL = process.env.SITE_URL;
+if (!ENV_VARS.SITE_URL) throw new Error('SITE_URL environment variable is required');
+const SITE_URL = ENV_VARS.SITE_URL;
 const DOCS_DIR = path.join(ROOT, 'assets', 'docs');
 const docAssets = fs.existsSync(DOCS_DIR)
   ? fs.readdirSync(DOCS_DIR).map(f => `assets/docs/${f}`)
@@ -29,8 +30,6 @@ const ALWAYS_INCLUDE_ASSETS = [
   ...LOCALES.map(l => `assets/og/${l}.png`),
   ...docAssets,
 ];
-
-const ENV_VARS = { SITE_URL };
 
 function substituteEnv(src) {
   return src.replace(/%%(\w+)%%/g, (_match, key) => {
@@ -187,7 +186,7 @@ async function build() {
   for (const file of pageFiles) {
     const srcPath = path.join(PAGES, file);
     const src = fs.readFileSync(srcPath, 'utf8');
-    const assembled = resolveIncludes(src, path.dirname(srcPath));
+    const assembled = substituteEnv(resolveIncludes(src, path.dirname(srcPath)));
     const pagePath = pagePathFromFile(file);
 
     for (const lang of LOCALES) {

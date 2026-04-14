@@ -8,10 +8,10 @@ const { applyTranslations, pagePathFromFile } = require('./translate');
 
 const ROOT = path.join(__dirname, '..');
 
-require('./load-env')('.env.dev');
+const fileVars = require('./load-env')('.env.dev');
+const ENV_VARS = Object.fromEntries(Object.keys(fileVars).map(k => [k, process.env[k]]));
 
-const PORT = process.env.DEV_PORT || 3000;
-const ENV_VARS = {};
+const PORT = ENV_VARS.DEV_PORT || 3000;
 
 function substituteEnv(src) {
   return src.replace(/%%(\w+)%%/g, (_match, key) => {
@@ -210,14 +210,14 @@ http.createServer((req, res) => {
             res.end('404 Not Found');
             return;
           }
-          const assembled = resolveIncludes(notFoundData, path.dirname(notFoundPath));
+          const assembled = substituteEnv(resolveIncludes(notFoundData, path.dirname(notFoundPath)));
           const pagePath = pagePathFromFile('404.html');
           res.writeHead(404, { 'Content-Type': mimeType });
           res.end(applyTranslations(assembled, translations[lang], lang, pagePath));
         });
         return;
       }
-      const assembled = resolveIncludes(data, path.dirname(filePath));
+      const assembled = substituteEnv(resolveIncludes(data, path.dirname(filePath)));
       const pageFile = path.relative(PAGES, filePath).replace(/\\/g, '/');
       const pagePath = pagePathFromFile(pageFile);
       res.writeHead(200, { 'Content-Type': mimeType });
